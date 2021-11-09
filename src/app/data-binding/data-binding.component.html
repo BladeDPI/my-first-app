@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+      <label>User Name: </label>
+      <input [(ngModel)]="userName"
+             class="form-control" type="text"
+      >
+      <p>{{userName}}</p>
+      <button (click)="userName=''"
+              [disabled]="onUserNameEmpty()"
+              class="btn btn-primary"
+      >Add User
+      </button>
+    </div>
+  </div>
+</div>
+
+
