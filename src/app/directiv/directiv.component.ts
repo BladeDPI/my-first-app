@@ -16,11 +16,11 @@ export class DirectivComponent implements OnInit {
   }
 
   onShowPassword() {
-    this.showPass = !this.showPass;
     return this.showPass;
   }
 
   onDisplayClick() {
+    this.showPass = !this.showPass;
     this.click.push(new Date());
   }
 
