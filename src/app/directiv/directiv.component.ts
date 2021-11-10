@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./directiv.component.css']
 })
 export class DirectivComponent implements OnInit {
-  index = 1;
+  showPass = false;
   click = [];
 
   constructor() {
@@ -16,15 +16,15 @@ export class DirectivComponent implements OnInit {
   }
 
   onShowPassword() {
-    return this.index % 2 === 0;
+    this.showPass = !this.showPass;
+    return this.showPass;
   }
 
   onDisplayClick() {
-    this.click.push(this.index);
-    this.index++;
+    this.click.push(new Date());
   }
 
   onBackGround(object: Object) {
-    return object >= 5 ? 'blue' : 'transparent';
+    return object >= 4 ? 'blue' : 'transparent';
   }
 }
