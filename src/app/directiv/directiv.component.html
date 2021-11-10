@@ -1,0 +1,8 @@
+<button (click)="onDisplayClick()"
+        class="bt btn-primary">Display Details
+</button>
+<p *ngIf="onShowPassword()">Secret password=tuna</p>
+<div *ngFor="let display of click"
+     [ngClass]="{'white-text': display > 4}"
+     [ngStyle]="{backgroundColor:onBackGround(display)}"
+>{{display}}</div>
