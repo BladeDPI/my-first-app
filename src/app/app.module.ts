@@ -9,6 +9,7 @@ import {WarningAlertComponent} from './warning-alert/warning-alert.component';
 import {SuccessAlertComponent} from './success-alert/success-alert.component';
 import {DataBindingComponent} from './data-binding/data-binding.component';
 import {DirectivComponent} from './directiv/directiv.component';
+import {DebugComponent} from "./debug/debug.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {DirectivComponent} from './directiv/directiv.component';
     WarningAlertComponent,
     SuccessAlertComponent,
     DataBindingComponent,
-    DirectivComponent
+    DirectivComponent,
+    DebugComponent
   ],
   imports: [
     BrowserModule,
