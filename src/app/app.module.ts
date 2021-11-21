@@ -10,6 +10,8 @@ import {SuccessAlertComponent} from './success-alert/success-alert.component';
 import {DataBindingComponent} from './data-binding/data-binding.component';
 import {DirectivComponent} from './directiv/directiv.component';
 import {DebugComponent} from "./debug/debug.component";
+import {CockpitComponent} from './cockpit/cockpit.component';
+import {ServerElementComponent} from './server-element/server-element.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {DebugComponent} from "./debug/debug.component";
     SuccessAlertComponent,
     DataBindingComponent,
     DirectivComponent,
-    DebugComponent
+    DebugComponent,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,
