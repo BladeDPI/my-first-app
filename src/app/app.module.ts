@@ -12,6 +12,10 @@ import {DirectivComponent} from './directiv/directiv.component';
 import {DebugComponent} from "./debug/debug.component";
 import {CockpitComponent} from './cockpit/cockpit.component';
 import {ServerElementComponent} from './server-element/server-element.component';
+import {GameControlComponent} from './assigment04/game-control/game-control.component';
+import {OddComponent} from './assigment04/odd/odd.component';
+import {EvenComponent} from './assigment04/even/even.component';
+import {GameAppComponent} from './assigment04/game-app/game-app.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import {ServerElementComponent} from './server-element/server-element.component'
     DirectivComponent,
     DebugComponent,
     CockpitComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    GameControlComponent,
+    OddComponent,
+    EvenComponent,
+    GameAppComponent
   ],
   imports: [
     BrowserModule,
