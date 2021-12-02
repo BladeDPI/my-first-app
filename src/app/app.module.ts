@@ -18,6 +18,7 @@ import {EvenComponent} from './assigment04/even/even.component';
 import {GameAppComponent} from './assigment04/game-app/game-app.component';
 import {Section5Component} from './section_5/section5/section5.component';
 import {DirectivesComponent} from './section_07/directives/directives.component';
+import {BasicHighlightDirective} from "./section_07/basic-highlight/basic-highlight.directive";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {DirectivesComponent} from './section_07/directives/directives.component'
     EvenComponent,
     GameAppComponent,
     Section5Component,
-    DirectivesComponent
+    DirectivesComponent,
+    BasicHighlightDirective
   ],
   imports: [
     BrowserModule,
