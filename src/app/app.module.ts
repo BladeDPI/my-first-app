@@ -19,6 +19,7 @@ import {GameAppComponent} from './assigment04/game-app/game-app.component';
 import {Section5Component} from './section_5/section5/section5.component';
 import {DirectivesComponent} from './section_07/directives/directives.component';
 import {BasicHighlightDirective} from "./section_07/basic-highlight/basic-highlight.directive";
+import {BetterHighlightDirective} from './section_07/better-hightlight/better-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {BasicHighlightDirective} from "./section_07/basic-highlight/basic-highli
     GameAppComponent,
     Section5Component,
     DirectivesComponent,
-    BasicHighlightDirective
+    BasicHighlightDirective,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,
