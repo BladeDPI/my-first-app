@@ -10,6 +10,7 @@ export class DirectivesComponent implements OnInit {
   onlyOdd = false;
   oddNumbers = [1, 3, 5];
   evenNumbers = [2, 4];
+  value: number = 5;
 
   constructor() {
   }
