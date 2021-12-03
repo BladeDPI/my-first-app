@@ -20,6 +20,7 @@ import {Section5Component} from './section_5/section5/section5.component';
 import {DirectivesComponent} from './section_07/directives/directives.component';
 import {BasicHighlightDirective} from "./section_07/basic-highlight/basic-highlight.directive";
 import {BetterHighlightDirective} from './section_07/better-hightlight/better-highlight.directive';
+import {UnlessDirective} from './section_07/unless-directive/unless.directive';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {BetterHighlightDirective} from './section_07/better-hightlight/better-hi
     Section5Component,
     DirectivesComponent,
     BasicHighlightDirective,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
