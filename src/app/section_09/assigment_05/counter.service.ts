@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class CounterService {
   activeCount: number = 0;
   inActiveCount: number = 0;
