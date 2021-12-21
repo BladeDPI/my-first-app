@@ -24,6 +24,9 @@ import {UnlessDirective} from './section_07/unless-directive/unless.directive';
 import {ServicesComponent} from './section_09/services/services.component';
 import {AccountComponent} from "./section_09/account/account.component";
 import {NewAccountComponent} from "./section_09/new-account/new-account.component";
+import {Assigment05Component} from './section_09/assigment_05/assigment05/assigment05.component';
+import {ActiveUsersComponent} from "./section_09/assigment_05/active-users/active-users.component";
+import {InactiveUsersComponent} from "./section_09/assigment_05/inactive-users/inactive-users.component";
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import {NewAccountComponent} from "./section_09/new-account/new-account.componen
     UnlessDirective,
     ServicesComponent,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    Assigment05Component,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule,
