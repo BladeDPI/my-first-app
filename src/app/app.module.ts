@@ -21,12 +21,17 @@ import {DirectivesComponent} from './section_07/directives/directives.component'
 import {BasicHighlightDirective} from "./section_07/basic-highlight/basic-highlight.directive";
 import {BetterHighlightDirective} from './section_07/better-hightlight/better-highlight.directive';
 import {UnlessDirective} from './section_07/unless-directive/unless.directive';
-import {ServicesComponent} from './section_09/services/services.component';
-import {AccountComponent} from "./section_09/account/account.component";
-import {NewAccountComponent} from "./section_09/new-account/new-account.component";
-import {Assigment05Component} from './section_09/assigment_05/assigment05/assigment05.component';
-import {ActiveUsersComponent} from "./section_09/assigment_05/active-users/active-users.component";
-import {InactiveUsersComponent} from "./section_09/assigment_05/inactive-users/inactive-users.component";
+import {ServicesComponent} from './sec_09_injection/services/services.component';
+import {AccountComponent} from "./sec_09_injection/account/account.component";
+import {NewAccountComponent} from "./sec_09_injection/new-account/new-account.component";
+import {Assigment05Component} from './sec_09_injection/assigment_05/assigment05/assigment05.component';
+import {ActiveUsersComponent} from "./sec_09_injection/assigment_05/active-users/active-users.component";
+import {InactiveUsersComponent} from "./sec_09_injection/assigment_05/inactive-users/inactive-users.component";
+import {Sec11Component} from './sec_11_routing/sec11/sec11.component';
+import {HomeComponent} from "./sec_11_routing/home/home.component";
+import {UsersComponent} from "./sec_11_routing/users/users.component";
+import {UserComponent} from "./sec_11_routing/users/user/user.component";
+import {EditServerComponent} from "./sec_11_routing/servers/edit-server/edit-server.component";
 
 @NgModule({
   declarations: [
@@ -54,7 +59,13 @@ import {InactiveUsersComponent} from "./section_09/assigment_05/inactive-users/i
     NewAccountComponent,
     Assigment05Component,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    Sec11Component,
+    HomeComponent,
+    UsersComponent,
+    UserComponent,
+    EditServerComponent,
+    ServerComponent
   ],
   imports: [
     BrowserModule,
