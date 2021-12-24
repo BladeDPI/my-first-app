@@ -32,6 +32,13 @@ import {HomeComponent} from "./sec_11_routing/home/home.component";
 import {UsersComponent} from "./sec_11_routing/users/users.component";
 import {UserComponent} from "./sec_11_routing/users/user/user.component";
 import {EditServerComponent} from "./sec_11_routing/servers/edit-server/edit-server.component";
+import {RouterModule, Routes} from "@angular/router";
+
+const appRoutes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'users', component: UsersComponent},
+  {path: 'servers', component: ServersComponent}
+];
 
 @NgModule({
   declarations: [
@@ -69,7 +76,8 @@ import {EditServerComponent} from "./sec_11_routing/servers/edit-server/edit-ser
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
