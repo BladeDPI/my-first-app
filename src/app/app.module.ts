@@ -33,11 +33,13 @@ import {UsersComponent} from "./sec_11_routing/users/users.component";
 import {UserComponent} from "./sec_11_routing/users/user/user.component";
 import {EditServerComponent} from "./sec_11_routing/servers/edit-server/edit-server.component";
 import {RouterModule, Routes} from "@angular/router";
+import {Servers11Component} from "./sec_11_routing/servers/servers11.component";
+import {Server11Component} from "./sec_11_routing/servers/server/server11.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'users', component: UsersComponent},
-  {path: 'servers', component: ServersComponent}
+  {path: 'servers', component: Servers11Component}
 ];
 
 @NgModule({
@@ -72,7 +74,8 @@ const appRoutes: Routes = [
     UsersComponent,
     UserComponent,
     EditServerComponent,
-    ServerComponent
+    Server11Component,
+    Servers11Component
   ],
   imports: [
     BrowserModule,

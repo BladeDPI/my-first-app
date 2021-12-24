@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {ServersService} from './servers.service';
 
 @Component({
-  selector: 'app-servers',
-  templateUrl: './servers.component.html',
-  styleUrls: ['./servers.component.css']
+  selector: 'app-servers11',
+  templateUrl: './servers11.component.html',
+  styleUrls: ['./servers11.component.css']
 })
-export class ServersComponent implements OnInit {
+export class Servers11Component implements OnInit {
   public servers: { id: number, name: string, status: string }[] = [];
 
   constructor(private serversService: ServersService) {
