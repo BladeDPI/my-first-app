@@ -35,6 +35,7 @@ import {EditServerComponent} from "./sec_11_routing/servers/edit-server/edit-ser
 import {RouterModule, Routes} from "@angular/router";
 import {Servers11Component} from "./sec_11_routing/servers/servers11.component";
 import {Server11Component} from "./sec_11_routing/servers/server/server11.component";
+import {PageNotFoundComponent} from './sec_11_routing/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -49,6 +50,8 @@ const appRoutes: Routes = [
       {path: ':id/edit', component: EditServerComponent}
     ]
   },
+  {path: 'not-found', component: PageNotFoundComponent},
+  {path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({
@@ -84,7 +87,8 @@ const appRoutes: Routes = [
     UserComponent,
     EditServerComponent,
     Server11Component,
-    Servers11Component
+    Servers11Component,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
