@@ -35,7 +35,9 @@ import {EditServerComponent} from "./sec_11_routing/servers/edit-server/edit-ser
 import {Servers11Component} from "./sec_11_routing/servers/servers11.component";
 import {Server11Component} from "./sec_11_routing/servers/server/server11.component";
 import {PageNotFoundComponent} from './sec_11_routing/page-not-found/page-not-found.component';
-import {AppRoutingModule} from "./app-routing.module";
+import {AppRoutingModule} from "./sec_11_routing/app-routing.module";
+import {AuthService} from "./sec_11_routing/auth.service";
+import {AuthGuard} from "./sec_11_routing/auth-guard.service";
 
 @NgModule({
   declarations: [
@@ -78,7 +80,7 @@ import {AppRoutingModule} from "./app-routing.module";
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
