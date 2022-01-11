@@ -8,6 +8,7 @@ import {Server11Component} from "./servers/server/server11.component";
 import {EditServerComponent} from "./servers/edit-server/edit-server.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {AuthGuard} from "./auth-guard.service";
+import {CanDeactivateGuard} from "./servers/edit-server/can-deactivate-guard.service";
 
 
 const appRoutes: Routes = [
@@ -24,7 +25,7 @@ const appRoutes: Routes = [
     component: Servers11Component,
     children: [
       {path: ':id', component: Server11Component},
-      {path: ':id/edit', component: EditServerComponent}
+      {path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard]}
     ]
   },
   {path: 'not-found', component: PageNotFoundComponent},
