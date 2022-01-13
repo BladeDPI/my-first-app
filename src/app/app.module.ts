@@ -35,12 +35,15 @@ import {EditServerComponent} from "./sec_11_routing/servers/edit-server/edit-ser
 import {Servers11Component} from "./sec_11_routing/servers/servers11.component";
 import {Server11Component} from "./sec_11_routing/servers/server/server11.component";
 import {PageNotFoundComponent} from './sec_11_routing/page-not-found/page-not-found.component';
-import {AppRoutingModule} from "./sec_11_routing/app-routing.module";
 import {AuthService} from "./sec_11_routing/auth.service";
 import {AuthGuard} from "./sec_11_routing/auth-guard.service";
 import {CanDeactivateGuard} from "./sec_11_routing/servers/edit-server/can-deactivate-guard.service";
 import {ErrorPageComponent} from './sec_11_routing/error-page/error-page.component';
 import {ServerResolver} from "./sec_11_routing/servers/server/server-resolver.service";
+import {Sec13Component} from './sec_13_observables/sec13/sec13.component';
+import {Home13Component} from "./sec_13_observables/home/home13.component";
+import {User13Component} from "./sec_13_observables/user/user13.component";
+import {App13RoutingModule} from "./sec_13_observables/app13-routing.module";
 
 @NgModule({
   declarations: [
@@ -77,12 +80,15 @@ import {ServerResolver} from "./sec_11_routing/servers/server/server-resolver.se
     Server11Component,
     Servers11Component,
     PageNotFoundComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    Sec13Component,
+    Home13Component,
+    User13Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    App13RoutingModule
   ],
   providers: [AuthService, AuthGuard, CanDeactivateGuard, ServerResolver],
   bootstrap: [AppComponent]
