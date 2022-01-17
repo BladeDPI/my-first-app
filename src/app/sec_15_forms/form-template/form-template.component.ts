@@ -7,7 +7,10 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./form-template.component.css']
 })
 export class FormTemplateComponent implements OnInit {
-  @ViewChild('f') signupForm : NgForm;
+  @ViewChild('f') signupForm: NgForm;
+  defaultQuestion = 'pet';
+  answer = "";
+  genders = ['male', 'female'];
 
   constructor() {
   }
