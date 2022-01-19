@@ -7,8 +7,9 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./assigment06.component.css']
 })
 export class Assigment06Component implements OnInit {
-  @ViewChild('f') signupForm: NgForm;
-  defaultSubscription = 'advanced';
+  @ViewChild('signupForm', {static: false}) signupForm: NgForm;
+  subscriptions = ['Basic', 'Advanced', 'Pro'];
+  defaultSubscription = 'Advanced';
 
   user = {
     email: '',
@@ -23,8 +24,8 @@ export class Assigment06Component implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form);
+  onSubmit() {
+    console.log(this.signupForm.value);
     this.user.email = this.signupForm.value.email;
     this.user.subscription = this.signupForm.value.subscription;
     this.user.password = this.signupForm.value.password;
