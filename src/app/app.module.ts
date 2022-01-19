@@ -45,6 +45,7 @@ import {Home13Component} from "./sec_13_observables/home/home13.component";
 import {User13Component} from "./sec_13_observables/user/user13.component";
 import {App13RoutingModule} from "./sec_13_observables/app13-routing.module";
 import {FormTemplateComponent} from './sec_15_forms/form-template/form-template.component';
+import {Assigment06Component} from './sec_15_forms/assigment06/assigment06.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import {FormTemplateComponent} from './sec_15_forms/form-template/form-template.
     Sec13Component,
     Home13Component,
     User13Component,
-    FormTemplateComponent
+    FormTemplateComponent,
+    Assigment06Component
   ],
   imports: [
     BrowserModule,
