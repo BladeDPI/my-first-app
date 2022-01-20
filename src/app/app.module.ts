@@ -47,6 +47,7 @@ import {App13RoutingModule} from "./sec_13_observables/app13-routing.module";
 import {FormTemplateComponent} from './sec_15_forms/form-template/form-template.component';
 import {Assigment06Component} from './sec_15_forms/assigment06/assigment06.component';
 import {FormReactivComponent} from './sec_15_forms/form-reactiv/form-reactiv.component';
+import {Assigment07Component} from './sec_15_forms/assigment07/assigment07.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import {FormReactivComponent} from './sec_15_forms/form-reactiv/form-reactiv.com
     User13Component,
     FormTemplateComponent,
     Assigment06Component,
-    FormReactivComponent
+    FormReactivComponent,
+    Assigment07Component
   ],
   imports: [
     BrowserModule,
