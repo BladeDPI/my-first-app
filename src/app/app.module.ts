@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import {ServerComponent} from "./section_3/server/server.component";
@@ -46,6 +46,7 @@ import {User13Component} from "./sec_13_observables/user/user13.component";
 import {App13RoutingModule} from "./sec_13_observables/app13-routing.module";
 import {FormTemplateComponent} from './sec_15_forms/form-template/form-template.component';
 import {Assigment06Component} from './sec_15_forms/assigment06/assigment06.component';
+import {FormReactivComponent} from './sec_15_forms/form-reactiv/form-reactiv.component';
 
 @NgModule({
   declarations: [
@@ -87,11 +88,13 @@ import {Assigment06Component} from './sec_15_forms/assigment06/assigment06.compo
     Home13Component,
     User13Component,
     FormTemplateComponent,
-    Assigment06Component
+    Assigment06Component,
+    FormReactivComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     App13RoutingModule
   ],
   providers: [AuthService, AuthGuard, CanDeactivateGuard, ServerResolver],
