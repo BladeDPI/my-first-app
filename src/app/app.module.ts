@@ -48,6 +48,9 @@ import {FormTemplateComponent} from './sec_15_forms/form-template/form-template.
 import {Assigment06Component} from './sec_15_forms/assigment06/assigment06.component';
 import {FormReactivComponent} from './sec_15_forms/form-reactiv/form-reactiv.component';
 import {Assigment07Component} from './sec_15_forms/assigment07/assigment07.component';
+import {PipesComponent} from './sec_17_pipe/pipes/pipes.component';
+import {ShortenPipe} from "./sec_17_pipe/pipes/shorten.pipe";
+import {FilterPipe} from './sec_17_pipe/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -91,7 +94,10 @@ import {Assigment07Component} from './sec_15_forms/assigment07/assigment07.compo
     FormTemplateComponent,
     Assigment06Component,
     FormReactivComponent,
-    Assigment07Component
+    Assigment07Component,
+    PipesComponent,
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
