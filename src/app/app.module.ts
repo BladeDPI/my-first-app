@@ -51,6 +51,9 @@ import {Assigment07Component} from './sec_15_forms/assigment07/assigment07.compo
 import {PipesComponent} from './sec_17_pipe/pipes/pipes.component';
 import {ShortenPipe} from "./sec_17_pipe/pipes/shorten.pipe";
 import {FilterPipe} from './sec_17_pipe/pipes/filter.pipe';
+import {AssigmentPipesComponent} from './sec_17_pipe/pipes/assigment-pipes/assigment-pipes.component';
+import {ReversePipe} from './sec_17_pipe/pipes/assigment-pipes/reverse.pipe';
+import {SortPipe} from './sec_17_pipe/pipes/assigment-pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -97,7 +100,10 @@ import {FilterPipe} from './sec_17_pipe/pipes/filter.pipe';
     Assigment07Component,
     PipesComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    AssigmentPipesComponent,
+    ReversePipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,
