@@ -54,6 +54,8 @@ import {FilterPipe} from './sec_17_pipe/pipes/filter.pipe';
 import {AssigmentPipesComponent} from './sec_17_pipe/pipes/assigment-pipes/assigment-pipes.component';
 import {ReversePipe} from './sec_17_pipe/pipes/assigment-pipes/reverse.pipe';
 import {SortPipe} from './sec_17_pipe/pipes/assigment-pipes/sort.pipe';
+import {HttpStart1Component} from "./sec_18_http_request/http-start1/http-start1.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -103,13 +105,15 @@ import {SortPipe} from './sec_17_pipe/pipes/assigment-pipes/sort.pipe';
     FilterPipe,
     AssigmentPipesComponent,
     ReversePipe,
-    SortPipe
+    SortPipe,
+    HttpStart1Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    App13RoutingModule
+    App13RoutingModule,
+    HttpClientModule
   ],
   providers: [AuthService, AuthGuard, CanDeactivateGuard, ServerResolver],
   bootstrap: [AppComponent]
