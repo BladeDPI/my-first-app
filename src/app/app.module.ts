@@ -56,6 +56,7 @@ import {ReversePipe} from './sec_17_pipe/pipes/assigment-pipes/reverse.pipe';
 import {SortPipe} from './sec_17_pipe/pipes/assigment-pipes/sort.pipe';
 import {HttpStart1Component} from "./sec_18_http_request/http-start1/http-start1.component";
 import {HttpClientModule} from "@angular/common/http";
+import {BaseTestComponent} from './sec_28_testing/base-test/base-test.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,8 @@ import {HttpClientModule} from "@angular/common/http";
     AssigmentPipesComponent,
     ReversePipe,
     SortPipe,
-    HttpStart1Component
+    HttpStart1Component,
+    BaseTestComponent
   ],
   imports: [
     BrowserModule,
