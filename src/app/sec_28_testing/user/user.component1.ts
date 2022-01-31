@@ -22,4 +22,7 @@ export class UserComponent1 implements OnInit {
     this.dataService.getDetails().then((data: string) => this.data = data);
   }
 
+  onLogin() {
+    this.isLoggedIn = true;
+  }
 }
