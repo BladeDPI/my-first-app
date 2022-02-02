@@ -1,58 +1,61 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {map} from "rxjs/operators";
 import {Post} from "./post.model";
+import {PostService} from "./post.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-http-start1',
   templateUrl: './http-start1.component.html',
   styleUrls: ['./http-start1.component.css']
 })
-export class HttpStart1Component implements OnInit {
-  loadedPosts = [];
+export class HttpStart1Component implements OnInit, OnDestroy {
+  loadedPosts: Post[] = [];
+  isFetching = false;
+  error = null;
+  private errorSub: Subscription;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private postService: PostService) {
   }
 
-  private readonly FIREBASE_URL = 'https://ng-complete-guide-12059-default-rtdb.firebaseio.com/posts.json';
-
   ngOnInit() {
-    this.fetchPosts();
+    this.errorSub = this.postService.error.subscribe(errorMessage => {
+      this.error = errorMessage;
+    });
+    this.onFetchPosts();
   }
 
   onCreatePost(postData: Post) {
     // Send Http request
-    console.log(postData);
-    this.http.post<{ name: string }>(
-      this.FIREBASE_URL,
-      postData
-    ).subscribe(responseData => {
-      console.log(responseData);
-    });
+    this.postService.createAndStorePost(postData.title, postData.content);
   }
 
   onFetchPosts() {
     // Send Http request
-    this.fetchPosts();
+    this.isFetching = true;
+    this.postService.fetchPosts()
+      .subscribe(posts => {
+        this.isFetching = false;
+        this.loadedPosts = posts;
+      }, error => {
+        this.isFetching = false;
+        this.error = error.message;
+      });
   }
 
   onClearPosts() {
-    // Send Http request
+    this.postService.clearPosts()
+      .subscribe(response => {
+        this.loadedPosts = [];
+      });
   }
 
-  private fetchPosts() {
-    this.http.get<{ [key: string]: Post }>(this.FIREBASE_URL)
-      .pipe(map((reponseData) => {
-        const postArray: Post[] = [];
-        for (const key in reponseData) {
-          if (reponseData.hasOwnProperty(key)) {
-            postArray.push({...reponseData[key], id: key});
-          }
-          return postArray;
-        }
-      }))
-      .subscribe(posts => {
-        console.log(posts);
-      });
+  ngOnDestroy(): void {
+    this.errorSub.unsubscribe();
+  }
+
+  onHandleError() {
+    this.error = null;
   }
 }

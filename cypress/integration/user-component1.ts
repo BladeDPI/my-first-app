@@ -14,7 +14,7 @@ describe('User Component1', () => {
 
   it('has the correct text if logged in', () => {
     cy.get('[data-testid="login-button"]').click();
-    cy.get('h1').contains('User logged in');
+    cy.get('h1').contains('User logged in1');
     cy.get('p').contains('User is: Max');
   });
 });
