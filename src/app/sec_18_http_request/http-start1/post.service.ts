@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpEventType, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Post} from "./post.model";
-import {catchError, map} from "rxjs/operators";
+import {catchError, map, tap} from "rxjs/operators";
 import {Subject, throwError} from "rxjs";
 
 @Injectable({providedIn: "root"})
@@ -16,8 +16,12 @@ export class PostService {
     const postData: Post = {title: title, content: content};
     this.http.post<{ name: string }>(
       this.FIREBASE_URL,
-      postData
+      postData,
+      {
+        observe: "response"
+      }
     ).subscribe(response => {
+        console.log(response.headers);
       },
       error => {
         this.error.next(error.message);
@@ -25,8 +29,15 @@ export class PostService {
   }
 
   fetchPosts() {
+    let searchParams = new HttpParams();
+    searchParams = searchParams.append('print', 'pretty');
+    searchParams = searchParams.append('custom', 'key');
     return this.http
-      .get<{ [key: string]: Post }>(this.FIREBASE_URL)
+      .get<{ [key: string]: Post }>(this.FIREBASE_URL,
+        {
+          headers: new HttpHeaders({'Custom-Header': 'Hello'}),
+          params: searchParams
+        })
       .pipe(
         map((reponseData) => {
           const postArray: Post[] = [];
@@ -44,6 +55,17 @@ export class PostService {
 
   clearPosts() {
     return this.http
-      .delete<{ [key: string]: Post }>(this.FIREBASE_URL);
+      .delete<{ [key: string]: Post }>(this.FIREBASE_URL,
+        {
+          observe: "events",
+        }).pipe(tap(event => {
+        console.log(event);
+        if (event.type == HttpEventType.Sent) {
+          // event was sent
+        }
+        if (event.type == HttpEventType.Response) {
+          console.log(event.body);
+        }
+      }));
   }
 }

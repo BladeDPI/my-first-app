@@ -55,10 +55,12 @@ import {AssigmentPipesComponent} from './sec_17_pipe/pipes/assigment-pipes/assig
 import {ReversePipe} from './sec_17_pipe/pipes/assigment-pipes/reverse.pipe';
 import {SortPipe} from './sec_17_pipe/pipes/assigment-pipes/sort.pipe';
 import {HttpStart1Component} from "./sec_18_http_request/http-start1/http-start1.component";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {BaseTestComponent} from './sec_28_testing/base-test/base-test.component';
 import {ReversePipe1} from "./sec_28_testing/pipe/reverse.pipe1";
 import {UserComponent1} from "./sec_28_testing/user/user.component1";
+import {AuthInterceptorService} from "./sec_18_http_request/http-start1/auth-interceptor.service";
+import {LoggingInterceptorService} from "./sec_18_http_request/http-start1/logging-interceptor.service";
 
 @NgModule({
   declarations: [
@@ -121,7 +123,17 @@ import {UserComponent1} from "./sec_28_testing/user/user.component1";
     App13RoutingModule,
     HttpClientModule
   ],
-  providers: [AuthService, AuthGuard, CanDeactivateGuard, ServerResolver],
+  providers: [AuthService, AuthGuard, CanDeactivateGuard, ServerResolver,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
